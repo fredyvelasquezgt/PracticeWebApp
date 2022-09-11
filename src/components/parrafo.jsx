@@ -2,11 +2,10 @@ import React from 'react';
 
 const Parrafo = () => {
 
-    const saludo = 'hola desde constante';
 
     return (
         <div>
-            <p>Bienvenidos a mi sitio {saludo} </p>
+            <p>Bienvenidos a mi sitio  </p>
         </div>
     )
 }

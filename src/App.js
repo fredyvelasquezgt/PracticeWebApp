@@ -1,6 +1,7 @@
 import React from "react";
 import Parrafo from "./components/Parrafo";
 import Variables from "./components/Variables";
+import Evento from "./components/Evento";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <h1>hola mundo React</h1>
       <Parrafo />
       <Variables />
+      <Evento />
     </div>
   );
 }
