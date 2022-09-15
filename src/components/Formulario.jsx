@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 
 const Formulario = () => {
 
-
+   //hago un estado por cada input
     const [fruta, setFruta] = useState('')
     const [descripcion, setDescripcion] = useState('')
+    const [lista, setLista] = useState([])
 
-    //hago un estado por cada input
+
+    
 
 
     const guardarDatos = (e) => {
@@ -23,6 +25,14 @@ const Formulario = () => {
         }
     
         console.log('procesando datos...' + fruta + descripcion)
+        setLista([
+            ...lista, //pongo lo que ya tengo
+            {nombreFruta: fruta, nombreDescripcion: descripcion} //agrego 
+        ])
+
+        e.target.reset(); //limpia los campos
+        setFruta(''); //limpia todo
+        setDescripcion(''); //limpia todo
 
     }
 
@@ -46,6 +56,16 @@ const Formulario = () => {
                     type="submit">Agregar</button>
 
             </form>
+            <ul>
+                {
+                    lista.map((item, index) => (
+                        <li key={index}>
+                                {item.nombreFruta} - {item.nombreDescripcion}
+                            </li>
+                         
+                    ))
+                }
+            </ul>
         </div>
     )
 }
